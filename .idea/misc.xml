@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/drawable/profile_text_background.xml" value="0.176" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_profile_page.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_splash_screen.xml" value="0.23278985507246377" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/fragment_explore.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/fragment_home.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/fragment_reminder.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/soura/AndroidStudioProjects/simpleCalc/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1635" />
         <entry key="..\:/Users/soura/AndroidStudioProjects/simpleCalc/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/soura/AndroidStudioProjects/simpleCalc/app/src/main/res/layout/fragment_explore.xml" value="0.1859375" />
