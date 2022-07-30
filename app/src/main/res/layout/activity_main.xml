@@ -5,16 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+<!--body-->
 
 
+
+
+
+
+
+
+<!--Menue bar-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/container"
         android:layout_above="@+id/bottom_nav"
         >
-
-
     </FrameLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
 
