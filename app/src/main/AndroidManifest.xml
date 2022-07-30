@@ -14,6 +14,15 @@
         android:theme="@style/Theme.SimpleCalc"
         tools:targetApi="31">
         <activity
+            android:name=".myplants"
+            android:exported="false" />
+        <activity
+            android:name=".indoor"
+            android:exported="false" />
+        <activity
+            android:name=".outdoor"
+            android:exported="false" />
+        <activity
             android:name=".ProfilePage"
             android:exported="false" />
         <activity
@@ -27,7 +36,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
