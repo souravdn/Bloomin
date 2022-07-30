@@ -8,4 +8,7 @@
     <string name="explore_nev">Explore</string>
     <string name="remainder_nev">Remainder</string>
     <string name="shop_nev">Shop</string>
+
+    <string name="edit_btn">Edit Profile</string>
+    <string name="logout">Logout</string>
 </resources>
