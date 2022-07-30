@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <item android:id="@+id/home"
-    android:title="Home"
+    android:title="@string/home_nev"
     android:icon="@drawable/home" />
 
     <item android:id="@+id/explore"
-        android:title="Explore"
-        android:icon="@drawable/exp" />
+        android:title="@string/explore_nev"
+        android:icon="@drawable/explore" />
 
     <item android:id="@+id/reminder"
-        android:title="Reminder"
+        android:title="@string/remainder_nev"
         android:icon="@drawable/reminder" />
     <item android:id="@+id/shop"
-        android:title="Shop"
+        android:title="@string/shop_nev"
         android:icon="@drawable/shop" />
 </menu>
