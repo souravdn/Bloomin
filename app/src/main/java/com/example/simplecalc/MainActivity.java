@@ -11,11 +11,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
-         BottomNavigationView bottomNavigationView;
-         HomeFragment homeFragment=new HomeFragment();
-         ReminderFragment reminderFragment=new ReminderFragment();
-         ShopFragment shopFragment=new ShopFragment();
-         ExploreFragment exploreFragment=new ExploreFragment();
+    BottomNavigationView bottomNavigationView;
+    HomeFragment homeFragment=new HomeFragment();
+    ReminderFragment reminderFragment=new ReminderFragment();
+    ShopFragment shopFragment=new ShopFragment();
+    ExploreFragment exploreFragment=new ExploreFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
