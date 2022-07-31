@@ -1,22 +1,46 @@
 package com.example.simplecalc;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.time.*;
+import java.util.List;
+import java.util.Locale;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements LocationListener {
+
+    TextView user_location_tv, user_city_state;
+    DatePickerDialog.OnDateSetListener onDateSetListener;
+    LocationManager locationManager;
+    ImageView location_icon;
 
     Activity main;
     @Override
@@ -24,7 +48,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         main = getActivity();
         return inflater.inflate(R.layout.fragment_home, container, false);
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -34,6 +57,37 @@ public class HomeFragment extends Fragment {
         CardView card1=main.findViewById(R.id.indoor);
         CardView card2=main.findViewById(R.id.outdoor);
         LinearLayout linearLayout = main.findViewById(R.id.myplants);
+        user_location_tv = main.findViewById(R.id.user_location_home);
+        user_city_state = main.findViewById(R.id.user_city_state);
+        location_icon = main.findViewById(R.id.location_icon);
+
+        if(ContextCompat.checkSelfPermission(main, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            Toast.makeText(main, "Allow Bloomin` to Access Your Location", Toast.LENGTH_SHORT).show();
+            ActivityCompat.requestPermissions(main, new String[]{
+                    Manifest.permission.ACCESS_FINE_LOCATION
+            }, 100);
+        }
+        else{
+            Toast.makeText(main, "Fetching Location", Toast.LENGTH_SHORT).show();
+            getLocation();
+        }
+
+        location_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ContextCompat.checkSelfPermission(main, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+                    Toast.makeText(main, "Allow Bloomin` to Access Your Location", Toast.LENGTH_SHORT).show();
+                    ActivityCompat.requestPermissions(main, new String[]{
+                            Manifest.permission.ACCESS_FINE_LOCATION
+                    }, 100);
+                }
+                else{
+                    Toast.makeText(main, "Fetching Location", Toast.LENGTH_SHORT).show();
+                    getLocation();
+                }
+            }
+        });
+
         imgP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,11 +118,36 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+    }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @SuppressLint("MissingPermission")
+    private void getLocation() {
+        try {
+            locationManager = (LocationManager) main.getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1, 1, this);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
-
-
-
+    @SuppressLint("SetTextI18n")
+    @Override
+    public void onLocationChanged(@NonNull Location location) {
+        try{
+            Geocoder geocoder = new Geocoder(main, Locale.getDefault());
+            List<Address> addressList = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+            String local = addressList.get(0).getSubLocality();
+            String city = addressList.get(0).getLocality();
+            String state = addressList.get(0).getAdminArea();
+            String pin = addressList.get(0).getPostalCode();
+            user_location_tv.setText(local);
+            user_city_state.setText(city + "," + state + " " + pin);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 }

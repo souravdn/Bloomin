@@ -8,36 +8,49 @@
     android:fillViewport="true">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ExploreFragment">
+        android:layout_height="wrap_content"
+        tools:context=".ExploreFragment"
+        tools:ignore="ExtraText">
         //------------------location----------------------------------------------------
         <LinearLayout
             android:id="@+id/layout1"
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_marginTop="-8dp"
-            >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-16dp">
+
             <ImageView
+                android:id="@+id/location_icon"
                 android:layout_margin="60px"
-                android:layout_width="20dp"
-                android:layout_height="40dp"
-                android:src="@drawable/location"></ImageView>
+                android:layout_width="24dp"
+                android:layout_height="60dp"
+                android:src="@drawable/location"
+                tools:ignore="ContentDescription,PxUsage" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="-20dp"
-                >
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="-16dp"
+                android:orientation="vertical">
+
                 <TextView
+                    android:id="@+id/user_location_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="India,Agartala"
-                    android:textSize="15dp"
+                    android:textSize="24sp"
                     android:textColor="@color/black"
-                    android:fontFamily="sans-serif-black"
-                    >
-                </TextView>
+                    android:fontFamily="@font/helvetica_bold" />
+
+                <TextView
+                    android:id="@+id/user_city_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="16sp" />
+
             </LinearLayout>
+
+
         </LinearLayout>
         //-------------------login---------------------------------------------------------------
 
@@ -50,7 +63,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="false"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="18dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/profile_icon"
@@ -61,23 +74,17 @@
             android:layout_height="100dp"
             android:layout_marginTop="80dp"
             android:orientation="vertical"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/evening"
-                ></ImageView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Good Evening, Users!"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:layout_margin="5dp"
-        ></TextView>
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Good Evening, Users!"
+                android:textSize="32sp"
+                android:fontFamily="@font/helvetica_bold"
+                android:textColor="#B49ACA"
+                android:textAlignment="center"
+                android:layout_marginTop="50dp" />
 
         </LinearLayout>
 //-------------searchbar---------------
@@ -93,8 +100,7 @@
         android:layout_height="wrap_content"
         android:queryHint="Search Plants"
         android:iconifiedByDefault="false"
-        android:background="@color/white"
-        android:layout_alignParentTop="true"/>
+        android:background="@color/white" />
 </LinearLayout>
         //------------------cart-------------------------------------
 
@@ -139,7 +145,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
 
-                                ></ImageView>
+                                />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
@@ -152,8 +158,7 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-
-                                ></ImageView>
+                                />
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
                     //--------------------
@@ -174,7 +179,7 @@
 
                             <ImageView
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"></ImageView>
+                                android:layout_height="match_parent" />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
@@ -188,7 +193,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
 
-                                ></ImageView>
+                                />
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
 
@@ -221,7 +226,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
 
-                                ></ImageView>
+                                />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
@@ -258,7 +263,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
 
-                                ></ImageView>
+                                />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
@@ -272,7 +277,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
 
-                                ></ImageView>
+                                />
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
 
@@ -302,12 +307,12 @@ android:textStyle="bold"
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="30dp"
-                 android:layout_marginTop="55dp"
+                    android:layout_marginTop="55dp"
                     android:layout_marginLeft="88dp"
                     android:text="Outdoor"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="15dp"></TextView>
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -326,7 +331,7 @@ android:textStyle="bold"
                     android:text=" My Plants"
                     android:textColor="@color/black"
                     android:textSize="25dp"
-                    android:textStyle="bold"></TextView>
+                    android:textStyle="bold" />
                 ///////////////////////////11111111111111111111111
 
                 <androidx.cardview.widget.CardView
@@ -358,7 +363,7 @@ android:textStyle="bold"
                                 android:layout_height="110dp"
 
 
-                                ></ImageView>
+                                />
                         </androidx.cardview.widget.CardView>
 
                         <TextView
@@ -368,7 +373,7 @@ android:textStyle="bold"
                             android:text="Gold Rose"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textStyle="bold"></TextView>
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -401,7 +406,7 @@ android:textStyle="bold"
                                 android:layout_height="110dp"
 
 
-                                ></ImageView>
+                                />
                         </androidx.cardview.widget.CardView>
 
                         <TextView
@@ -411,7 +416,7 @@ android:textStyle="bold"
                             android:text="White Rose"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textStyle="bold"></TextView>
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>

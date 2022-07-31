@@ -12,7 +12,7 @@
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_profile_page.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_splash_screen.xml" value="0.23278985507246377" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/fragment_explore.xml" value="0.21784420289855072" />
-        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/fragment_home.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/fragment_reminder.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/gender_list.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
@@ -27,7 +27,6 @@
         <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/menu/bottom_nav_menu.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/GreenLife/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
-        <entry key="app/src/main/res/layout/fragment_reminder.xml" value="0.22604166666666667" />
       </map>
     </option>
   </component>
