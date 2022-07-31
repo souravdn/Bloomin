@@ -13,7 +13,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment=new HomeFragment();
-    ReminderFragment reminderFragment=new ReminderFragment();
+    ReminderFragment reminderFragment=new ReminderFragment(this);
     ShopFragment shopFragment=new ShopFragment();
     ExploreFragment exploreFragment=new ExploreFragment();
 
