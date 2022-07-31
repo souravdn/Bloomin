@@ -151,7 +151,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/edit_location"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="none"
+                    android:autofillHints="false"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
