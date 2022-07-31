@@ -11,4 +11,15 @@
 
     <string name="edit_btn">Edit Profile</string>
     <string name="logout">Logout</string>
+
+    <string name="edit_name">Name</string>
+    <string name="edit_email">Email</string>
+    <string name="edit_phone">Phone</string>
+    <string name="edit_gender">Gender</string>
+    <string name="edit_birthday">Birthday</string>
+    <string name="edit_address">address</string>
+    <string name="edit_password">Password</string>
+    <string name="edit_cpassword">Confirm Password</string>
+    <string name="edit_location">Location</string>
+    <string name="save_details">Save Details</string>
 </resources>

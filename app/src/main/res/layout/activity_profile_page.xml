@@ -220,13 +220,12 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="40dp"
-            android:background="@drawable/profile_text_background"
-            android:fontFamily="@font/helvetica"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/helvetica_bold"
             android:padding="8dp"
             android:text="@string/edit_btn"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/logout"
@@ -236,12 +235,12 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="40dp"
-                android:background="@drawable/profile_text_background"
+                android:background="@drawable/button_background"
                 android:padding="8dp"
+                android:textColor="@color/white"
                 android:text="@string/logout"
-                android:textAllCaps="false"
-                android:textSize="24sp"
-                android:fontFamily="@font/helvetica"/>
+                android:textSize="20sp"
+                android:fontFamily="@font/helvetica_bold"/>
         </LinearLayout>
         </LinearLayout>
     </ScrollView>
