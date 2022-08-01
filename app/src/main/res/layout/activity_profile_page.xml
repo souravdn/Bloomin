@@ -10,15 +10,15 @@
         android:id="@+id/myProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_image"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="false"
-        android:layout_below="@+id/profile_image"
+        android:layout_marginStart="16dp"
         android:fontFamily="@font/helvetica_bold"
         android:text="My Profile"
         android:textColor="@color/black"
         android:textSize="32sp"
-        android:layout_marginStart="16dp"
         tools:ignore="HardcodedText" />
 
     <de.hdodenhof.circleimageview.CircleImageView
