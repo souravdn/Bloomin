@@ -111,9 +111,10 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        EditProfileActivity.this, android.R.style.Theme_Holo_Dialog_MinWidth,
+                        EditProfileActivity.this, android.R.style.Theme_Holo_Light_Dialog,
                         onDateSetListener, year, month, day);
                 datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
                 datePickerDialog.show();
             }
         });
@@ -133,7 +134,6 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         Uri uri = data.getData();
         profile.setImageURI(uri);
     }

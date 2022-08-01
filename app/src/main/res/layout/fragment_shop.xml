@@ -5,12 +5,24 @@
     android:layout_height="match_parent"
     tools:context=".ExploreFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/shop_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shop Fragment"
-        android:textSize="25dp"
-        android:layout_centerInParent="true"/>
+        android:text="@string/shop_title"
+        android:textSize="32dp"
+        android:layout_marginTop="8dp"
+        tools:ignore="SpUsage"
+        android:textColor="@color/black"
+        android:fontFamily="@font/helvetica_bold"
+        android:layout_marginStart="20dp"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shop_recyclerview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shop_title"
+        android:layout_marginTop="32dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>

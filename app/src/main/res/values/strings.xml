@@ -22,4 +22,7 @@
     <string name="edit_cpassword">Confirm Password</string>
     <string name="edit_location">Location</string>
     <string name="save_details">Save Details</string>
+
+    <string name="explore_title">Explore</string>
+    <string name="shop_title">Shop</string>
 </resources>

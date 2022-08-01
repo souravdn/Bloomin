@@ -18,8 +18,8 @@
         android:fontFamily="@font/helvetica_bold"
         android:text="My Profile"
         android:textColor="@color/black"
-        android:textSize="32sp"
-        tools:ignore="HardcodedText" />
+        android:textSize="32dp"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
@@ -41,8 +41,8 @@
         android:fontFamily="@font/helvetica_bold"
         android:text="User Name"
         android:textColor="@color/black"
-        android:textSize="24sp"
-        tools:ignore="HardcodedText" />
+        android:textSize="24dp"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <TextView
         android:id="@+id/city_name"
@@ -52,8 +52,8 @@
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/helvetica"
         android:text="City, Country"
-        android:textSize="16sp"
-        tools:ignore="HardcodedText" />
+        android:textSize="16dp"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <ScrollView
         android:id="@+id/scroll"
@@ -77,9 +77,9 @@
                 android:fontFamily="@font/helvetica_bold"
                 android:text="Gender"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="20dp"
                 android:layout_marginStart="8dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:id="@+id/user_gender"
@@ -88,9 +88,9 @@
                 android:background="@drawable/profile_text_background"
                 android:padding="12dp"
                 android:text="Other"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:layout_marginTop="4dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:id="@+id/birthday"
@@ -100,9 +100,9 @@
                 android:fontFamily="@font/helvetica_bold"
                 android:text="Birthday"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="20dp"
                 android:layout_marginStart="8dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:id="@+id/user_birthday"
@@ -111,9 +111,9 @@
                 android:background="@drawable/profile_text_background"
                 android:padding="12dp"
                 android:text="29 Feb, 1999"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:layout_marginTop="4dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:id="@+id/email"
@@ -123,9 +123,9 @@
                 android:fontFamily="@font/helvetica_bold"
                 android:text="Email"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="20dp"
                 android:layout_marginStart="8dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:id="@+id/user_email"
@@ -134,9 +134,9 @@
                 android:background="@drawable/profile_text_background"
                 android:padding="12dp"
                 android:text="user@gmail.com"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:layout_marginTop="4dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:id="@+id/phone"
@@ -146,9 +146,9 @@
                 android:fontFamily="@font/helvetica_bold"
                 android:text="Phone"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="20dp"
                 android:layout_marginStart="8dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:id="@+id/user_phone"
@@ -157,9 +157,9 @@
                 android:background="@drawable/profile_text_background"
                 android:padding="12dp"
                 android:text="987654321"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:layout_marginTop="4dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:id="@+id/address"
@@ -169,9 +169,9 @@
                 android:fontFamily="@font/helvetica_bold"
                 android:text="Address"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="20dp"
                 android:layout_marginStart="8dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:id="@+id/user_address"
@@ -180,9 +180,9 @@
                 android:background="@drawable/profile_text_background"
                 android:padding="12dp"
                 android:text="Lane, Town..."
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:layout_marginTop="4dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:id="@+id/password"
@@ -192,9 +192,9 @@
                 android:fontFamily="@font/helvetica_bold"
                 android:text="Password"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="20dp"
                 android:layout_marginStart="8dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:id="@+id/user_password"
@@ -203,9 +203,9 @@
                 android:background="@drawable/profile_text_background"
                 android:padding="12dp"
                 android:text="..........."
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:layout_marginTop="4dp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,SpUsage" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -225,7 +225,8 @@
             android:padding="8dp"
             android:text="@string/edit_btn"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20dp"
+            tools:ignore="SpUsage,dpUsage" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/logout"
@@ -239,8 +240,9 @@
                 android:padding="8dp"
                 android:textColor="@color/white"
                 android:text="@string/logout"
-                android:textSize="20sp"
-                android:fontFamily="@font/helvetica_bold"/>
+                android:textSize="20dp"
+                android:fontFamily="@font/helvetica_bold"
+                tools:ignore="SpUsage,dpUsage" />
         </LinearLayout>
         </LinearLayout>
     </ScrollView>

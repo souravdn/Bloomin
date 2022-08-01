@@ -3,14 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExploreFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ExploreFragment"
+    android:layout_margin="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/explore_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Explore Fragment"
-        android:textSize="25dp"
-        android:layout_centerInParent="true"/>
+        android:text="@string/explore_title"
+        android:textSize="32dp"
+        tools:ignore="SpUsage"
+        android:textColor="@color/black"
+        android:fontFamily="@font/helvetica_bold"
+        android:layout_marginStart="20dp"/>
+
+    <android.widget.SearchView
+        android:id="@+id/explore_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:queryHint="Search Plants"
+        android:iconifiedByDefault="false"
+        android:background="@drawable/profile_text_background"
+        android:layout_below="@+id/explore_title"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:queryBackground="@android:color/transparent"
+        android:layout_centerHorizontal="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/explore_recyclerview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/explore_search"
+        android:layout_marginTop="32dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

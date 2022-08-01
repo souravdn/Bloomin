@@ -141,9 +141,9 @@ public class HomeFragment extends Fragment implements LocationListener {
             String city = addressList.get(0).getLocality();
             String state = addressList.get(0).getAdminArea();
             String pin = addressList.get(0).getPostalCode();
-            if(Objects.equals(local, ""))
+            if(!Objects.equals(local, ""))
                 user_location_tv.setText(local);
-            else if(Objects.equals(area, ""))
+            else if(!Objects.equals(area, ""))
                 user_location_tv.setText(area);
             else
                 user_location_tv.setText(city);
