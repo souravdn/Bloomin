@@ -104,7 +104,7 @@
                 android:layout_width="90dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
-                android:src="@drawable/partly_cloudy_weather"
+                android:src="@drawable/w11n"
                 tools:ignore="DuplicateIds" />
 
             <TextView

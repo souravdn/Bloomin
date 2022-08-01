@@ -22,20 +22,19 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/weatherIcon"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:layout_marginStart="250dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="14dp"
-        android:src="@drawable/partly_cloudy_weather"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        android:src="@drawable/w11n"
+        app:layout_constraintEnd_toStartOf="@+id/weatherTemp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="DuplicateIds" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/weatherTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="300dp"
@@ -63,14 +62,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </androidx.cardview.widget.CardView>
-
-
-
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
@@ -78,13 +69,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="160dp"
         android:layout_marginEnd="16dp"
-        android:background="#f6f6f6"
         android:orientation="horizontal"
+        android:background="@drawable/reminder_palette"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -105,18 +96,19 @@
 
         <ImageButton
             android:id="@+id/ib1"
-            android:layout_width="30dp"
+            android:layout_width="12dp"
             android:layout_height="50dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="0dp"
             android:layout_weight="1"
-            android:scaleType="fitCenter"
-            android:src="@drawable/timer"
-            app:layout_constraintEnd_toEndOf="@+id/switch1"
+            android:scaleType="centerCrop"
+            android:backgroundTint="@color/light_gray"
+            android:src="@drawable/reminder_snooze"
+            app:layout_constraintEnd_toEndOf="@+id/checkbox1"
             tools:ignore="SpeakableTextPresentCheck" />
 
-        <Switch
-            android:id="@+id/switch1"
+        <CheckBox
+            android:id="@+id/checkbox1"
             android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_margin="0dp"
@@ -124,6 +116,10 @@
             android:layout_weight="1"
             android:shadowColor="#7D3AB7"
             android:text=""
+            android:checked="true"
+            android:buttonTint="@color/lavender"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
             android:textColorHighlight="#3F51B5"
             android:textColorLink="#673AB7"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout1"
@@ -149,13 +145,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="340dp"
         android:layout_marginEnd="16dp"
-        android:background="#f6f6f6"
+        android:background="@drawable/reminder_palette"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv2"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -177,18 +173,19 @@
 
         <ImageButton
             android:id="@+id/ib2"
-            android:layout_width="30dp"
+            android:layout_width="12dp"
             android:layout_height="50dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="0dp"
             android:layout_weight="1"
-            android:scaleType="fitCenter"
-            android:src="@drawable/timer"
-            app:layout_constraintEnd_toEndOf="@+id/switch1"
-            tools:ignore="SpeakableTextPresentCheck"             />
+            android:scaleType="centerCrop"
+            android:backgroundTint="@color/light_gray"
+            android:src="@drawable/reminder_snooze"
+            app:layout_constraintEnd_toEndOf="@+id/checkbox1"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <Switch
-            android:id="@+id/switch2"
+        <CheckBox
+            android:id="@+id/checkbox2"
             android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_margin="0dp"
@@ -196,23 +193,25 @@
             android:layout_weight="1"
             android:shadowColor="#7D3AB7"
             android:text=""
+            android:checked="true"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:buttonTint="@color/lavender"
             android:textColorHighlight="#3F51B5"
             android:textColorLink="#673AB7"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout1"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
-
     </LinearLayout>
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/addReminderBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:clickable="true"
-        android:src="@drawable/clock"
-        android:backgroundTint="#f6f6f6"
+        android:src="@drawable/add"
+        app:backgroundTint="@color/lavender"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
