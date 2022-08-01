@@ -33,12 +33,12 @@ import android.widget.Toast;
 import java.time.*;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 
 public class HomeFragment extends Fragment implements LocationListener {
 
     TextView user_location_tv, user_city_state;
-    DatePickerDialog.OnDateSetListener onDateSetListener;
     LocationManager locationManager;
     ImageView location_icon;
 
@@ -58,19 +58,8 @@ public class HomeFragment extends Fragment implements LocationListener {
         CardView card2=main.findViewById(R.id.outdoor);
         LinearLayout linearLayout = main.findViewById(R.id.myplants);
         user_location_tv = main.findViewById(R.id.user_location_home);
-        user_city_state = main.findViewById(R.id.user_city_state);
         location_icon = main.findViewById(R.id.location_icon);
-
-        if(ContextCompat.checkSelfPermission(main, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-            Toast.makeText(main, "Allow Bloomin` to Access Your Location", Toast.LENGTH_SHORT).show();
-            ActivityCompat.requestPermissions(main, new String[]{
-                    Manifest.permission.ACCESS_FINE_LOCATION
-            }, 100);
-        }
-        else{
-            Toast.makeText(main, "Fetching Location", Toast.LENGTH_SHORT).show();
-            getLocation();
-        }
+        user_city_state = main.findViewById(R.id.user_city_state);
 
         location_icon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,6 +107,15 @@ public class HomeFragment extends Fragment implements LocationListener {
                 startActivity(intent);
             }
         });
+
+        if(ContextCompat.checkSelfPermission(main, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(main, new String[]{
+                    Manifest.permission.ACCESS_FINE_LOCATION
+            }, 100);
+        }
+        else{
+            getLocation();
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -139,15 +137,20 @@ public class HomeFragment extends Fragment implements LocationListener {
             Geocoder geocoder = new Geocoder(main, Locale.getDefault());
             List<Address> addressList = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
             String local = addressList.get(0).getSubLocality();
+            String area = addressList.get(0).getSubAdminArea();
             String city = addressList.get(0).getLocality();
             String state = addressList.get(0).getAdminArea();
             String pin = addressList.get(0).getPostalCode();
-            user_location_tv.setText(local);
+            if(Objects.equals(local, ""))
+                user_location_tv.setText(local);
+            else if(Objects.equals(area, ""))
+                user_location_tv.setText(area);
+            else
+                user_location_tv.setText(city);
             user_city_state.setText(city + "," + state + " " + pin);
         }
         catch (Exception e){
             e.printStackTrace();
         }
     }
-
 }
