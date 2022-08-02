@@ -60,7 +60,8 @@ public class HomeFragment extends Fragment implements LocationListener {
         ImageButton imgP = (ImageButton) main.findViewById(R.id.profile);
         CardView card1 = main.findViewById(R.id.indoor);
         CardView card2 = main.findViewById(R.id.outdoor);
-        LinearLayout linearLayout = main.findViewById(R.id.myplants);
+//        LinearLayout linearLayout = main.findViewById(R.id.fplants);
+        CardView card3=main.findViewById(R.id.fplants);
 
         //Greet
         TextView greet_tv;
@@ -122,7 +123,7 @@ public class HomeFragment extends Fragment implements LocationListener {
             }
         });
 
-        linearLayout.setOnClickListener(new View.OnClickListener() {
+        card3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(main, myplants.class);
