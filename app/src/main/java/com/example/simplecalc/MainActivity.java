@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,5 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        new TestDB(this);     //to create a sample database
     }
 }

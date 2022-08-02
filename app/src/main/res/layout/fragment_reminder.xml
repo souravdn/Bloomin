@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Remainder"
+        android:text="Reminder"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
