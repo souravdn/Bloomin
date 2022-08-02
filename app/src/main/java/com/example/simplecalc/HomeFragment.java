@@ -40,19 +40,12 @@ public class HomeFragment extends Fragment implements LocationListener {
     TextView user_location_tv, user_city_state;
     LocationManager locationManager;
     ImageView location_icon;
-    final Context context;
-
-    public HomeFragment(Context c) {
-        context = c;
-    }
 
     Activity main;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         main = getActivity();
-        ViewGroup homeViewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, null);
-        Weather.getWeather(homeViewGroup,context);
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 

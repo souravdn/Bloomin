@@ -1,6 +1,7 @@
 package com.example.simplecalc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,13 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ExploreV
     public void onBindViewHolder(@NonNull ExploreViewHolder holder, int position) {
         holder.explore_image.setImageResource(explore_images.get(position));
         holder.explore_text.setText(explore_titles.get(position));
+        holder.explore_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ClickOnExploreActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

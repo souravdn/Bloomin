@@ -11,12 +11,12 @@
         android:id="@+id/explore_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/explore_title"
-        android:textSize="32dp"
-        tools:ignore="SpUsage"
-        android:textColor="@color/black"
+        android:layout_marginStart="20dp"
         android:fontFamily="@font/helvetica_bold"
-        android:layout_marginStart="20dp"/>
+        android:text="@string/explore_title"
+        android:textColor="@color/black"
+        android:textSize="32dp"
+        tools:ignore="SpUsage" />
 
     <android.widget.SearchView
         android:id="@+id/explore_search"

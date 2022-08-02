@@ -200,19 +200,20 @@
     </ScrollView>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_details"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="false"
-        android:text="@string/save_details"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/save_details_background"
         android:fontFamily="@font/helvetica_bold"
         android:padding="8dp"
-        android:textSize="20dp"
+        android:text="@string/save_details"
         android:textColor="@color/white"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:background="@drawable/save_details_background"
+        android:textSize="20dp"
         tools:ignore="SpUsage" />
 
 </RelativeLayout>

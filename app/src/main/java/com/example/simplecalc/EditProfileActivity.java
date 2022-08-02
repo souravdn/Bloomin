@@ -3,6 +3,7 @@ package com.example.simplecalc;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -22,6 +23,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -37,6 +40,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 public class EditProfileActivity extends AppCompatActivity implements LocationListener {
 
@@ -45,9 +49,10 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
     ImageButton pencil;
     String[] gender = {"Male", "Female", "Other"};
     AutoCompleteTextView autoCompleteTextView;
-    TextInputEditText bday, user_location;
+    TextInputEditText bday, user_location, edit_name, edit_email, edit_ph, edit_pass, edit_confirm;
     DatePickerDialog.OnDateSetListener onDateSetListener;
     LocationManager locationManager;
+    AppCompatButton save_details;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +68,12 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
         user_location = findViewById(R.id.edit_location);
         user_location.setShowSoftInputOnFocus(false);
         user_location.setCursorVisible(false);
+        edit_name = findViewById(R.id.edit_name);
+        edit_email = findViewById(R.id.edit_email);
+        edit_ph = findViewById(R.id.edit_phone);
+        edit_pass = findViewById(R.id.edit_password);
+        edit_confirm = findViewById(R.id.edit_cpassword);
+        save_details = findViewById(R.id.save_details);
 
         final Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -129,6 +140,39 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
             }
         };
 
+        // Click on SAVE DETAILS Button
+        save_details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(TextUtils.isEmpty(Objects.requireNonNull(edit_name.getText()).toString())){
+                    edit_name.setError("Name is required.");
+                    edit_name.requestFocus();
+                    return;
+                }
+                if(TextUtils.isEmpty(Objects.requireNonNull(edit_email.getText()).toString())){
+                    edit_email.setError("Email is required.");
+                    edit_email.requestFocus();
+                    return;
+                } else if(!Patterns.EMAIL_ADDRESS.matcher(edit_email.getText().toString()).matches()){
+                    edit_email.setError("Enter Valid Email Address.");
+                    edit_email.requestFocus();
+                    return;
+                }
+                if(TextUtils.isEmpty(Objects.requireNonNull(edit_ph.getText()).toString())){
+                    edit_ph.setError("Phone Number is required.");
+                    edit_ph.requestFocus();
+                    return;
+                } else if(!android.util.Patterns.PHONE.matcher(edit_ph.getText().toString()).matches()){
+                    edit_ph.setError("Enter Valid Phone Number.");
+                    edit_ph.requestFocus();
+                    return;
+                }
+                if(!Objects.requireNonNull(edit_pass.getText()).toString().equals(Objects.requireNonNull(edit_confirm.getText()).toString())){
+                    Toast.makeText(EditProfileActivity.this, "Passwords Doesn't Match", Toast.LENGTH_SHORT).show();
+                }
+                Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

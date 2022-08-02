@@ -30,10 +30,23 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    HomeFragment homeFragment=new HomeFragment(this);
+    HomeFragment homeFragment=new HomeFragment();
     ReminderFragment reminderFragment=new ReminderFragment(this);
     ShopFragment shopFragment=new ShopFragment();
     ExploreFragment exploreFragment=new ExploreFragment();
+
+    int counter = 0;
+
+    @Override
+    public void onBackPressed() {
+        counter++;
+        if(counter == 1){
+            Toast.makeText(this, "Press Again to Exit", Toast.LENGTH_SHORT).show();
+        }
+        if(counter == 2) {
+            super.onBackPressed();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
