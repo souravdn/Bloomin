@@ -153,7 +153,10 @@
                     app:cardBackgroundColor="#DFDFDF"
                     app:cardCornerRadius="25dp">
 
-
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/liveplant"></ImageView>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -164,7 +167,13 @@
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="#DFDFDF"
                     app:cardCornerRadius="25dp">
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/aloevera"
+    >
 
+</ImageView>
 
                 </androidx.cardview.widget.CardView>
 
@@ -219,7 +228,7 @@
 
 
 
-//featured-----------------
+//featured plants-----------------
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fplants"
@@ -227,7 +236,8 @@
                     android:layout_height="110dp"
                     android:layout_margin="20dp"
                     app:cardBackgroundColor="#DFDFDF"
-                    app:cardCornerRadius="20dp">
+                    android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -247,8 +257,7 @@
                             <ImageView
                                 android:layout_width="110dp"
                                 android:layout_height="110dp"
-
-
+                                android:background="@drawable/monstera"
                                 />
                         </androidx.cardview.widget.CardView>
 

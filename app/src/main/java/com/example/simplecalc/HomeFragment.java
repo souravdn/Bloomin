@@ -60,7 +60,6 @@ public class HomeFragment extends Fragment implements LocationListener {
         ImageButton imgP = (ImageButton) main.findViewById(R.id.profile);
         CardView card1 = main.findViewById(R.id.indoor);
         CardView card2 = main.findViewById(R.id.outdoor);
-//        LinearLayout linearLayout = main.findViewById(R.id.fplants);
         CardView card3=main.findViewById(R.id.fplants);
 
         //Greet
