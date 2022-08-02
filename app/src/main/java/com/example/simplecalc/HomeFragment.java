@@ -30,6 +30,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -42,20 +44,43 @@ public class HomeFragment extends Fragment implements LocationListener {
     ImageView location_icon;
 
     Activity main;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         main = getActivity();
+
+
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void onStart(){
+    public void onStart() {
         super.onStart();
         ImageButton imgP = (ImageButton) main.findViewById(R.id.profile);
-        CardView card1=main.findViewById(R.id.indoor);
-        CardView card2=main.findViewById(R.id.outdoor);
+        CardView card1 = main.findViewById(R.id.indoor);
+        CardView card2 = main.findViewById(R.id.outdoor);
         LinearLayout linearLayout = main.findViewById(R.id.myplants);
+
+        //Greet
+        TextView greet_tv;
+        greet_tv = (TextView) main.findViewById(R.id.greet);
+        Date date = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        int hour = cal.get(Calendar.HOUR_OF_DAY);
+        //greeting
+        if (hour >= 12 && hour < 17) {
+            greet_tv.setText("Good Afternoon,User!");
+        } else if (hour >= 17 && hour < 21) {
+            greet_tv.setText("Good Evening,User!");
+        } else if (hour >= 21 && hour < 24) {
+            greet_tv.setText("Good Night,User!");
+        } else {
+            greet_tv.setText("Good Morning,User!");
+        }
+
+
         user_location_tv = main.findViewById(R.id.user_location_home);
         location_icon = main.findViewById(R.id.location_icon);
         user_city_state = main.findViewById(R.id.user_city_state);
@@ -63,19 +88,17 @@ public class HomeFragment extends Fragment implements LocationListener {
         location_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(ContextCompat.checkSelfPermission(main, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+                if (ContextCompat.checkSelfPermission(main, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(main, "Allow Bloomin` to Access Your Location", Toast.LENGTH_SHORT).show();
                     ActivityCompat.requestPermissions(main, new String[]{
                             Manifest.permission.ACCESS_FINE_LOCATION
                     }, 100);
-                }
-                else{
+                } else {
                     Toast.makeText(main, "Fetching Location", Toast.LENGTH_SHORT).show();
                     getLocation();
                 }
             }
         });
-
         imgP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,17 +107,17 @@ public class HomeFragment extends Fragment implements LocationListener {
             }
         });
 
-        card1.setOnClickListener(new View.OnClickListener(){
+        card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(main,indoor.class);
+                Intent intent = new Intent(main, indoor.class);
                 startActivity(intent);
             }
         });
-        card2.setOnClickListener(new View.OnClickListener(){
+        card2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(main,outdoor.class);
+                Intent intent = new Intent(main, outdoor.class);
                 startActivity(intent);
             }
         });
@@ -102,17 +125,16 @@ public class HomeFragment extends Fragment implements LocationListener {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(main,myplants.class);
+                Intent intent = new Intent(main, myplants.class);
                 startActivity(intent);
             }
         });
 
-        if(ContextCompat.checkSelfPermission(main, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+        if (ContextCompat.checkSelfPermission(main, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(main, new String[]{
                     Manifest.permission.ACCESS_FINE_LOCATION
             }, 100);
-        }
-        else{
+        } else {
             getLocation();
         }
     }
@@ -123,8 +145,7 @@ public class HomeFragment extends Fragment implements LocationListener {
         try {
             locationManager = (LocationManager) main.getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1, 1, this);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -132,7 +153,7 @@ public class HomeFragment extends Fragment implements LocationListener {
     @SuppressLint("SetTextI18n")
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        try{
+        try {
             Geocoder geocoder = new Geocoder(main, Locale.getDefault());
             List<Address> addressList = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
             String local = addressList.get(0).getSubLocality();
@@ -140,15 +161,14 @@ public class HomeFragment extends Fragment implements LocationListener {
             String city = addressList.get(0).getLocality();
             String state = addressList.get(0).getAdminArea();
             String pin = addressList.get(0).getPostalCode();
-            if(!Objects.equals(local, ""))
+            if (!Objects.equals(local, ""))
                 user_location_tv.setText(local);
-            else if(!Objects.equals(area, ""))
+            else if (!Objects.equals(area, ""))
                 user_location_tv.setText(area);
             else
                 user_location_tv.setText(city);
             user_city_state.setText(city + "," + state + " " + pin);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
