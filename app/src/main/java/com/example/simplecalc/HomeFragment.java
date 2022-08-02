@@ -3,7 +3,6 @@ package com.example.simplecalc;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -21,6 +20,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +30,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.time.*;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -41,12 +40,19 @@ public class HomeFragment extends Fragment implements LocationListener {
     TextView user_location_tv, user_city_state;
     LocationManager locationManager;
     ImageView location_icon;
+    final Context context;
+
+    public HomeFragment(Context c) {
+        context = c;
+    }
 
     Activity main;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         main = getActivity();
+        ViewGroup homeViewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, null);
+        Weather.getWeather(homeViewGroup,context);
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 

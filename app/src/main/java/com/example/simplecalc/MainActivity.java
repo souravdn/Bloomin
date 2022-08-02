@@ -30,7 +30,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    HomeFragment homeFragment=new HomeFragment();
+    HomeFragment homeFragment=new HomeFragment(this);
     ReminderFragment reminderFragment=new ReminderFragment(this);
     ShopFragment shopFragment=new ShopFragment();
     ExploreFragment exploreFragment=new ExploreFragment();
