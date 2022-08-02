@@ -19,6 +19,9 @@
         android:theme="@style/Theme.SimpleCalc"
         tools:targetApi="31">
         <activity
+            android:name=".PlantDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ClickOnExploreActivity"
             android:exported="false" />
         <activity

@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlantDetailsActivity"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:cardCornerRadius="50dp"
+        android:layout_marginTop="-50dp">
+
+        <ImageView
+            android:id="@+id/plant_cover_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/rose"
+            android:scaleType="centerCrop"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/plant_details_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rose"
+        android:fontFamily="@font/helvetica_bold"
+        android:textSize="32dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        tools:ignore="SpUsage" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/plant_details_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rose_description"
+                android:fontFamily="@font/helvetica"
+                android:textSize="18dp"
+                android:justificationMode="inter_word"
+                android:textColor="@color/black"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:lineSpacingExtra="2dp"
+                tools:ignore="SpUsage,UnusedAttribute" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp">
+
+                <TableRow>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="160dp"
+                        android:layout_height="120dp"
+                        app:cardElevation="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="@color/light_gray"
+                        app:cardCornerRadius="24dp"
+                        android:layout_marginStart="8dp">
+
+                       <RelativeLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent">
+
+                           <ImageView
+                               android:id="@+id/light_details"
+                               android:layout_width="32dp"
+                               android:layout_height="32dp"
+                               android:layout_centerVertical="true"
+                               android:layout_marginStart="20dp"
+                               android:src="@drawable/light" />
+
+                           <TextView
+                               android:id="@+id/light_text"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginStart="10dp"
+                               android:layout_marginTop="40dp"
+                               android:layout_toEndOf="@+id/light_details"
+                               android:letterSpacing="0.05"
+                               android:text="@string/light"
+                               android:textSize="12dp"
+                               tools:ignore="SpUsage" />
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/light_text"
+                               android:layout_toEndOf="@+id/light_details"
+                               android:text="Part-Full"
+                               android:layout_marginStart="10dp"
+                               android:textSize="16dp"
+                               android:textColor="@color/black"
+                               android:fontFamily="@font/helvetica"
+                               android:letterSpacing="0.05"
+                               tools:ignore="HardcodedText,SpUsage" />
+
+                       </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="160dp"
+                        android:layout_height="120dp"
+                        app:cardElevation="0dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/light_gray"
+                        android:layout_marginBottom="8dp"
+                        app:cardCornerRadius="24dp"
+                        android:layout_marginStart="8dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/water_details"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/water" />
+
+                            <TextView
+                                android:id="@+id/water_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/water"
+                                android:layout_toEndOf="@+id/water_details"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginStart="8dp"
+                                android:textSize="12dp"
+                                android:letterSpacing="0.05"
+                                tools:ignore="SpUsage" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/water_text"
+                                android:layout_toEndOf="@+id/water_details"
+                                android:text="Every 3-7 days"
+                                android:layout_marginStart="8dp"
+                                android:textSize="16dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/helvetica"
+                                android:letterSpacing="0.05"
+                                tools:ignore="HardcodedText,SpUsage" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </TableRow>
+
+                <TableRow>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="160dp"
+                        android:layout_height="120dp"
+                        app:cardElevation="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="@color/light_gray"
+                        app:cardCornerRadius="24dp"
+                        android:layout_marginStart="8dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/temp_details"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/temp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="24dp"/>
+
+                            <TextView
+                                android:id="@+id/temp_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/temp"
+                                android:layout_toEndOf="@+id/temp_details"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginStart="8dp"
+                                android:textSize="12dp"
+                                android:letterSpacing="0.05"
+                                tools:ignore="SpUsage" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/temp_text"
+                                android:layout_marginStart="8dp"
+                                android:layout_toEndOf="@+id/temp_details"
+                                android:fontFamily="@font/helvetica"
+                                android:letterSpacing="0.05"
+                                android:text="15-20 °C"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                tools:ignore="HardcodedText,SpUsage" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="160dp"
+                        android:layout_height="120dp"
+                        app:cardElevation="0dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/light_gray"
+                        android:layout_marginBottom="8dp"
+                        app:cardCornerRadius="24dp"
+                        android:layout_marginStart="8dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/fertilize_details"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="24dp"
+                                android:src="@drawable/fertilize" />
+
+                            <TextView
+                                android:id="@+id/fertilize_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/fertilize"
+                                android:layout_toEndOf="@+id/fertilize_details"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginStart="8dp"
+                                android:textSize="12dp"
+                                android:letterSpacing="0.05"
+                                tools:ignore="SpUsage" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/fertilize_text"
+                                android:layout_marginStart="8dp"
+                                android:layout_toEndOf="@+id/fertilize_details"
+                                android:fontFamily="@font/helvetica"
+                                android:text="Every 2-4 weeks"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:letterSpacing="0.05"
+                                tools:ignore="HardcodedText,SpUsage" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plant_profile"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="32dp"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:fontFamily="@font/helvetica_bold"
+                tools:ignore="SpUsage" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/light_gray"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="32dp"
+                android:layout_marginBottom="32dp"
+                app:cardElevation="0dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginBottom="32dp"
+                    android:layout_marginEnd="60dp">
+
+                    <TextView
+                        android:id="@+id/property1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/property1"
+                        android:textSize="16dp"
+                        tools:ignore="SpUsage" />
+
+                    <TextView
+                        android:id="@+id/property2"
+                        android:layout_below="@+id/property1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/property2"
+                        android:layout_marginTop="22dp"
+                        android:textSize="16dp"
+                        tools:ignore="SpUsage"/>
+
+                    <TextView
+                        android:id="@+id/property3"
+                        android:layout_below="@+id/property2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/property3"
+                        android:layout_marginTop="22dp"
+                        android:textSize="16dp"
+                        tools:ignore="SpUsage"/>
+
+                    <TextView
+                        android:id="@+id/property4"
+                        android:layout_below="@+id/property3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/property4"
+                        android:layout_marginTop="22dp"
+                        android:textSize="16dp"
+                        tools:ignore="SpUsage"/>
+
+                    <TextView
+                        android:id="@+id/property5"
+                        android:layout_below="@+id/property4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/property5"
+                        android:layout_marginTop="20dp"
+                        android:textSize="16dp"
+                        tools:ignore="SpUsage"/>
+
+                    <TextView
+                        android:id="@+id/property6"
+                        android:layout_below="@+id/property5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/property6"
+                        android:layout_marginTop="22dp"
+                        android:textSize="16dp"
+                        tools:ignore="SpUsage"/>
+
+                    <TextView
+                        android:id="@+id/property7"
+                        android:layout_below="@+id/property6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/property7"
+                        android:layout_marginTop="22dp"
+                        android:textSize="16dp"
+                        tools:ignore="SpUsage"/>
+
+
+                    <TextView
+                        android:id="@+id/attr1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_toEndOf="@+id/property1"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:gravity="end"
+                        android:lineSpacingExtra="0.5dp"
+                        android:text="Rosa"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        tools:ignore="HardcodedText,SpUsage" />
+
+
+                    <TextView
+                        android:id="@+id/attr2"
+                        android:layout_toEndOf="@+id/property2"
+                        android:layout_below="@+id/attr1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:text="Shrub"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:textSize="16dp"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="0.5dp"
+                        tools:ignore="HardcodedText,SpUsage" />
+
+
+                    <TextView
+                        android:id="@+id/attr3"
+                        android:layout_toEndOf="@+id/property3"
+                        android:layout_below="@+id/attr2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:text="2-3 ft."
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:textSize="16dp"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="0.5dp"
+                        tools:ignore="HardcodedText,SpUsage" />
+
+
+                    <TextView
+                        android:id="@+id/attr4"
+                        android:layout_toEndOf="@+id/property4"
+                        android:layout_below="@+id/attr3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:text="40-60%"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:textSize="16dp"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="0.5dp"
+                        tools:ignore="HardcodedText,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/attr5"
+                        android:layout_toEndOf="@+id/property6"
+                        android:layout_below="@+id/attr4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:text="Every 2-3 yrs"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:textSize="16dp"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="0.5dp"
+                        tools:ignore="HardcodedText,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/attr6"
+                        android:layout_toEndOf="@+id/property6"
+                        android:layout_below="@+id/attr5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:text="Late winter"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:textSize="16dp"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="0.5dp"
+                        tools:ignore="HardcodedText,SpUsage" />
+
+                    <TextView
+                        android:id="@+id/attr7"
+                        android:layout_toEndOf="@+id/property7"
+                        android:layout_below="@+id/attr6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:layout_alignParentEnd="true"
+                        android:text="Greece, Italy"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:textSize="16dp"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="0.5dp"
+                        tools:ignore="HardcodedText,SpUsage" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADD PLANT"
+                android:textColor="@color/white"
+                android:fontFamily="@font/helvetica_bold"
+                android:textSize="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="32dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_background"
+                tools:ignore="HardcodedText,SpUsage" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -25,6 +25,29 @@
 
     <string name="explore_title">Explore</string>
     <string name="shop_title">Shop</string>
-    
+
     <string name="shrubs">Shrubs</string>
+    <string name="rose">Rose</string>
+
+    <string name="rose_description">Rosa is perhaps one of the most popular flowers, featured in, oh, so many poems and songs. Their fame is quite welljustified, as not only does this deciduous plant look adorable but also has a god-like smell. There are more
+        than 30,000 rose varieties in the world, so you can choose
+        between wild, shrub, bed, and climbing roses as well as
+        many other options. These beauties will make any garden
+        or balcony a pleasure to behold.</string>
+
+
+    <string name="light">LIGHT</string>
+    <string name="water">WATER</string>
+    <string name="temp">TEMP.</string>
+    <string name="fertilize">FERTILIZE</string>
+    <string name="plant_profile">Plant Profile</string>
+
+    <string name="property1">Botanical Name</string>
+    <string name="property2">Plant Type</string>
+    <string name="property3">Mature size</string>
+    <string name="property4">Humidity</string>
+    <string name="property5">Reporting</string>
+    <string name="property6">Bloom Time</string>
+    <string name="property7">Native Area</string>
+
 </resources>

@@ -1,6 +1,7 @@
 package com.example.simplecalc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,14 @@ public class ExploreOnClickAdapter extends RecyclerView.Adapter<ExploreOnClickAd
         holder.plant_circle_image.setImageResource(plant_images.get(position));
         holder.plant_title_tv.setText(plant_titles.get(position));
         holder.plant_sci_tv.setText(plant_sci_names.get(position));
+
+        holder.plant_circle_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, PlantDetailsActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
