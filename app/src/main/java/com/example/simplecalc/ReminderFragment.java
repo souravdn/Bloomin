@@ -40,7 +40,4 @@ public class ReminderFragment extends Fragment {
 //        });
         return reminderViewGroup;
     }
-
-
-
 }
