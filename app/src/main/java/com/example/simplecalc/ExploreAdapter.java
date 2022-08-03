@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,13 +37,6 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ExploreV
     public void onBindViewHolder(@NonNull ExploreViewHolder holder, int position) {
         holder.explore_image.setImageResource(explore_images.get(position));
         holder.explore_text.setText(explore_titles.get(position));
-        holder.explore_image.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, ClickOnExploreActivity.class);
-                context.startActivity(intent);
-            }
-        });
     }
 
     @Override
@@ -50,16 +44,28 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ExploreV
         return explore_titles.size();
     }
 
-    public static class ExploreViewHolder extends RecyclerView.ViewHolder{
+    public class ExploreViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         ImageView explore_image;
         TextView explore_text;
 
         public ExploreViewHolder(@NonNull View itemView){
             super(itemView);
+            itemView.setOnClickListener(this);
 
             explore_image = itemView.findViewById(R.id.explore_image);
             explore_text = itemView.findViewById(R.id.explore_text);
+
+            explore_image.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = this.getAdapterPosition();
+            if(position == 3){
+            Intent exploreIntent = new Intent(context, ClickOnExploreActivity.class);
+            context.startActivity(exploreIntent);
+            }
         }
     }
 }
