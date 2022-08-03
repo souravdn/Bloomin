@@ -44,6 +44,8 @@ public class ExploreFragment extends Fragment {
         explore_images = new ArrayList<>();
         exploreAdapter = new ExploreAdapter(main, explore_titles, explore_images);
         ss = main.findViewById(R.id.explore_title);
+        SearchView msearchView = main.findViewById(R.id.explore_search);
+        msearchView.clearFocus();
 
         explore_images.add(R.drawable.flowering);
         explore_images.add(R.drawable.foliage_plants);

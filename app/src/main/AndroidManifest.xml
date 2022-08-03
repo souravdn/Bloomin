@@ -18,6 +18,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleCalc"
         tools:targetApi="31">
+        <activity android:name=".CactiActivity"
+            android:exported="false"/>
+        <activity android:name=".FloweringActivity"
+            android:exported="false"/>
+        <activity android:name=".FoliagePlantsActivity"
+            android:exported="false"/>
+        <activity android:name=".HerbsActivity"
+            android:exported="false"/>
+        <activity android:name=".TreesActivity"
+            android:exported="false"/>
         <activity
             android:name=".signout"
             android:exported="false" />

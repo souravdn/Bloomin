@@ -74,7 +74,7 @@
             android:id="@+id/greetings"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="100dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -82,11 +82,11 @@
                 android:id="@+id/greet"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="50dp"
                 android:fontFamily="@font/helvetica_bold"
                 android:textAlignment="center"
-                android:textColor="#7D6CAE"
+                android:textColor="@color/lavender"
                 android:textSize="25dp"
+                android:layout_marginTop="50dp"
                 tools:ignore="SpUsage" />
 
 
@@ -99,15 +99,16 @@
             android:layout_height="56dp"
             android:layout_below="@+id/greetings"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp">
+            android:layout_marginTop="16dp">
 
 
             <android.widget.SearchView
 
                 android:id="@+id/home_search"
-                android:layout_width="352dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/profile_text_background"
                 android:iconifiedByDefault="false"
                 android:queryBackground="@android:color/transparent"
@@ -219,7 +220,7 @@
 
                 <TextView
                     android:layout_width="350dp"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     android:text=" Featured Plants"
                     android:textColor="@color/black"
                     android:textSize="25dp"
@@ -241,15 +242,14 @@
                     android:layout_height="110dp"
                     android:layout_margin="20dp"
                     android:foreground="?android:attr/selectableItemBackground"
-                    app:cardBackgroundColor="#DFDFDF"
+                    app:cardBackgroundColor="@color/light_gray"
                     app:cardCornerRadius="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:id="@+id/fcard"
-                        >
+                        android:id="@+id/fcard">
 
                         <androidx.cardview.widget.CardView
 
@@ -260,8 +260,9 @@
                             android:outlineAmbientShadowColor="@color/black"
                             android:outlineSpotShadowColor="@color/black"
                             app:cardBackgroundColor="#B6B6B6"
-
-                            app:cardCornerRadius="20dp">
+                            app:cardCornerRadius="20dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
 
                             <ImageView
                                 android:layout_width="110dp"
@@ -275,8 +276,8 @@
                             android:text="Duranta"
                             android:layout_margin="20dp"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/helvetica"
+                            android:fontFamily="@font/helvetica_bold"
+                            android:textSize="20dp"
                             />
                         <TextView
                             android:layout_width="200dp"
@@ -284,9 +285,10 @@
                             android:text="Duranta cosmelia"
                             android:layout_marginLeft="-220dp"
                             android:layout_marginTop="40dp"
+                            android:textSize="16dp"
                             android:textColor="@color/black"
                             android:fontFamily="@font/helvetica_light_587ebe5a59211"
-                            />
+                            tools:ignore="SpUsage" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -296,7 +298,7 @@
                     android:layout_height="110dp"
                     android:layout_margin="20dp"
                     android:foreground="?android:attr/selectableItemBackground"
-                    app:cardBackgroundColor="#DFDFDF"
+                    app:cardBackgroundColor="@color/light_gray"
                     app:cardCornerRadius="20dp">
 
                     <LinearLayout
@@ -311,7 +313,7 @@
                             android:layout_marginTop="5dp"
                             android:outlineAmbientShadowColor="@color/black"
                             android:outlineSpotShadowColor="@color/black"
-                            app:cardBackgroundColor="#B6B6B6"
+                            app:cardBackgroundColor="@color/light_gray"
                             app:cardCornerRadius="20dp">
 
                             <ImageView
@@ -324,14 +326,15 @@
                             android:layout_width="200dp"
                             android:layout_height="50dp"
                             android:layout_margin="20dp"
+                            android:textSize="20dp"
                             android:text="Shrub"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
+                            android:fontFamily="@font/helvetica_bold"
+                            android:textColor="@color/black" />
                         <TextView
                             android:layout_width="200dp"
                             android:layout_height="50dp"
                             android:text="Shrub rosia"
+                            android:textSize="16dp"
                             android:layout_marginLeft="-220dp"
                             android:layout_marginTop="40dp"
                             android:textColor="@color/black"
@@ -345,7 +348,7 @@
                     android:layout_height="110dp"
                     android:layout_margin="20dp"
                     android:foreground="?android:attr/selectableItemBackground"
-                    app:cardBackgroundColor="#DFDFDF"
+                    app:cardBackgroundColor="@color/light_gray"
                     app:cardCornerRadius="20dp">
 
                     <LinearLayout
@@ -374,9 +377,9 @@
                             android:layout_height="50dp"
                             android:layout_margin="20dp"
                             android:text="Gardenia"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
+                            android:textSize="20dp"
+                            android:fontFamily="@font/helvetica_bold"
+                            android:textColor="@color/black" />
                         <TextView
                             android:layout_width="200dp"
                             android:layout_height="50dp"
@@ -384,6 +387,7 @@
                             android:layout_marginLeft="-220dp"
                             android:layout_marginTop="40dp"
                             android:textColor="@color/black"
+                            android:textSize="16dp"
                             android:fontFamily="@font/helvetica_light_587ebe5a59211"
                             />
                     </LinearLayout>

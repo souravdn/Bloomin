@@ -393,18 +393,18 @@
 
                     <TextView
                         android:id="@+id/attr2"
-                        android:layout_toEndOf="@+id/property2"
-                        android:layout_below="@+id/attr1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="end"
+                        android:layout_below="@+id/attr1"
                         android:layout_alignParentEnd="true"
+                        android:layout_marginTop="16dp"
+                        android:layout_toEndOf="@+id/property2"
+                        android:fontFamily="@font/helvetica_bold"
+                        android:gravity="end"
+                        android:lineSpacingExtra="0.5dp"
                         android:text="Shrub"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/helvetica_bold"
                         android:textSize="16dp"
-                        android:layout_marginTop="16dp"
-                        android:lineSpacingExtra="0.5dp"
                         tools:ignore="HardcodedText,SpUsage" />
 
 
