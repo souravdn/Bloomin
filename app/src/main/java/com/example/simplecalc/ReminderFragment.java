@@ -1,6 +1,7 @@
 package com.example.simplecalc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,12 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 //import java.net.URLEncoder;
 
 
 public class ReminderFragment extends Fragment {
     final Context context;
     public Integer img;
+
+
     public ReminderFragment(Context c) {
         context = c;
         Log.i("cotext:-", String.valueOf(c));
@@ -26,6 +31,8 @@ public class ReminderFragment extends Fragment {
         ViewGroup reminderViewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_reminder, null);
 //        ListView reminderListView = (ListView) reminderViewGroup.findViewById(R.id.reminderLV);
 //        generatereminderList(reminderListView);
+
+
         View addReminderBtn = reminderViewGroup.findViewById(R.id.addReminderBtn);
         Log.i("Msg:-", "befor getWeather");
         Weather.getWeather(reminderViewGroup,context);
@@ -38,6 +45,15 @@ public class ReminderFragment extends Fragment {
 //                startActivity(intent);
 //            }
 //        });
+
+        addReminderBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context.getApplicationContext(),AddTaskActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return reminderViewGroup;
     }
 }
