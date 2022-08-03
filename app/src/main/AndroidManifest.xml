@@ -22,6 +22,9 @@
             android:name=".ClickOnExploreActivity"
             android:exported="false" />
         <activity
+            android:name=".indoor_single_page_activity"
+            android:exported="false" />
+        <activity
             android:name=".myplants"
             android:exported="false" />
         <activity
@@ -47,7 +50,12 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.test.app.TEST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
