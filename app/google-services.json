@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "391332937025",
+    "project_id": "simplecalc-4de5a",
+    "storage_bucket": "simplecalc-4de5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391332937025:android:197fe9643a5fbb127eb5c0",
+        "android_client_info": {
+          "package_name": "com.example.simplecalc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "391332937025-ragmg9776ndtunk42hekdk9oc8kfe4qs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEUX5NfriDq8HeR8zUNgm8q7ca3dmp9Rk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "391332937025-ragmg9776ndtunk42hekdk9oc8kfe4qs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
