@@ -19,6 +19,9 @@
         android:theme="@style/Theme.SimpleCalc"
         tools:targetApi="31">
         <activity
+            android:name=".indoor_single_page_activity"
+            android:exported="false" />
+        <activity
             android:name=".AddTaskActivity"
             android:exported="false" />
         <activity
@@ -27,6 +30,7 @@
         <activity
             android:name=".PlantDetailsActivity"
             android:exported="false" />
+
         <activity
             android:name=".ClickOnExploreActivity"
             android:exported="false" />
@@ -48,6 +52,7 @@
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
