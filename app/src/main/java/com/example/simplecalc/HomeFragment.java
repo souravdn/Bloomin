@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment implements LocationListener {
         ImageButton imgP = (ImageButton) main.findViewById(R.id.profile);
         CardView card1 = main.findViewById(R.id.indoor);
         CardView card2 = main.findViewById(R.id.outdoor);
-        CardView card3=main.findViewById(R.id.fplants);
+
 
         //Greet
         TextView greet_tv;
@@ -79,6 +79,13 @@ public class HomeFragment extends Fragment implements LocationListener {
         } else {
             greet_tv.setText("Good Morning,User!");
         }
+
+
+
+
+        //featured card
+        LinearLayout fcard=main.findViewById(R.id.fcard);
+
 
 
         user_location_tv = main.findViewById(R.id.user_location_home);
@@ -121,14 +128,16 @@ public class HomeFragment extends Fragment implements LocationListener {
                 startActivity(intent);
             }
         });
-
-        card3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(main, myplants.class);
-                startActivity(intent);
-            }
-        });
+fcard.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent=new Intent(main,indoor_single_page_activity.class);
+        intent.putExtra("IMAGE", R.drawable.duranta);
+        intent.putExtra("TEXT1", "Duranta");
+        intent.putExtra("TEXT2", "Duranta repens");
+        startActivity(intent);
+    }
+});
 
         if (ContextCompat.checkSelfPermission(main, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(main, new String[]{
