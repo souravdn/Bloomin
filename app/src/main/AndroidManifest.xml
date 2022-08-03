@@ -19,22 +19,16 @@
         android:theme="@style/Theme.SimpleCalc"
         tools:targetApi="31">
         <activity
-            android:name=".TreesActivity"
+            android:name=".signout"
             android:exported="false" />
         <activity
-            android:name=".HerbsActivity"
+            android:name=".signup"
             android:exported="false" />
         <activity
-            android:name=".CactiActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FoliagePlantsActivity"
+            android:name=".signin"
             android:exported="false" />
         <activity
             android:name=".indoor_single_page_activity"
-            android:exported="false" />
-        <activity
-            android:name=".FloweringActivity"
             android:exported="false" />
         <activity
             android:name=".AddTaskActivity"
@@ -62,6 +56,9 @@
             android:exported="false" />
         <activity
             android:name=".ProfilePage"
+            android:exported="false" />
+        <activity
+            android:name=".HomeFragment"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"

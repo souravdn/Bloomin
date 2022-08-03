@@ -9,12 +9,8 @@
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/drawable/save_details_background.xml" value="0.2455" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_add_plants.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_add_task.xml" value="0.2" />
-        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_cacti.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_click_on_explore.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_edit_profile.xml" value="0.2" />
-        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_flowering.xml" value="0.20521590423257802" />
-        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_foliage_plants.xml" value="0.20521590423257802" />
-        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_herbs.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_indoor.xml" value="0.1" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_main.xml" value="0.2" />
@@ -22,7 +18,6 @@
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_pop_up.xml" value="0.264" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_profile_page.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_splash_screen.xml" value="0.23278985507246377" />
-        <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/activity_trees.xml" value="0.1936725096194955" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/curve_top_layout.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/explore_grid_items.xml" value="0.8800000000000001" />
         <entry key="..\:/Users/SAILAB/Desktop/GreenLife/app/src/main/res/layout/explore_onclick_griditem.xml" value="0.20521590423257802" />
@@ -43,8 +38,17 @@
         <entry key="..\:/Users/soura/AndroidStudioProjects/simpleCalc/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2" />
         <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/drawable/button_background.xml" value="0.136" />
         <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/activity_click_on_explore.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/activity_indoor.xml" value="0.1" />
         <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/activity_main2.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/activity_outdoor.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/explore_grid_items.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/explore_onclick_griditem.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/featured_item_row.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/indoor_item.xml" value="0.22" />
+        <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/indoor_single_page_activity.xml" value="0.1" />
+        <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/layout/outdoor_item.xml" value="0.30859375" />
         <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/Bloomin/app/src/main/res/menu/bottom_nav_menu.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/soura/OneDrive/Documents/GitHub/GreenLife/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
         <entry key="app/src/main/res/drawable/button_background.xml" value="0.2265" />

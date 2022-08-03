@@ -30,6 +30,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -42,14 +45,13 @@ public class HomeFragment extends Fragment implements LocationListener {
     TextView user_location_tv, user_city_state;
     LocationManager locationManager;
     ImageView location_icon;
-
     Activity main;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        main = getActivity();
 
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        main = getActivity();
 
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
@@ -62,7 +64,7 @@ public class HomeFragment extends Fragment implements LocationListener {
         CardView card2 = main.findViewById(R.id.outdoor);
 
 
-        //Greet
+        //Greet-----------------------------------------------------------------
         TextView greet_tv;
         greet_tv = (TextView) main.findViewById(R.id.greet);
         Date date = new Date();
@@ -81,11 +83,8 @@ public class HomeFragment extends Fragment implements LocationListener {
         }
 
 
-
-
         //featured card
-        LinearLayout fcard=main.findViewById(R.id.fcard);
-
+        LinearLayout fcard = main.findViewById(R.id.fcard);
 
 
         user_location_tv = main.findViewById(R.id.user_location_home);
@@ -109,7 +108,7 @@ public class HomeFragment extends Fragment implements LocationListener {
         imgP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(main, ProfilePage.class);
+                Intent intent = new Intent(main, signup.class);
                 startActivity(intent);
             }
         });
@@ -128,16 +127,16 @@ public class HomeFragment extends Fragment implements LocationListener {
                 startActivity(intent);
             }
         });
-fcard.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        Intent intent=new Intent(main,indoor_single_page_activity.class);
-        intent.putExtra("IMAGE", R.drawable.duranta);
-        intent.putExtra("TEXT1", "Duranta");
-        intent.putExtra("TEXT2", "Duranta repens");
-        startActivity(intent);
-    }
-});
+        fcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(main, indoor_single_page_activity.class);
+                intent.putExtra("IMAGE", R.drawable.duranta);
+                intent.putExtra("TEXT1", "Duranta");
+                intent.putExtra("TEXT2", "Duranta repens");
+                startActivity(intent);
+            }
+        });
 
         if (ContextCompat.checkSelfPermission(main, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(main, new String[]{
