@@ -50,12 +50,8 @@ public class PlantDB extends AppCompatActivity {
             values.put("repotting", repotting);
             values.put("bloom", bloom);
             values.put("nativeArea", nativeArea);
-            try {
-                plantDB.insertOrThrow("Plant", null, values);
-            } catch (Exception e) {
-                e.printStackTrace();
-                return false;
-            }
+
+            plantDB.insertOrThrow("Plant", null, values);
             return true;
         } catch (Exception e) {
             Log.e("ERROR:--", e.toString());
@@ -112,27 +108,19 @@ public class PlantDB extends AppCompatActivity {
         return plantDict;
     }
 
-    public ArrayList<Hashtable<String, String>> getPlants() {
+    public ArrayList<Hashtable<String, String>> getPlants(String type,String category) {
         ArrayList<Hashtable<String, String>> plantDictArr = new ArrayList<Hashtable<String, String>>();
-
+        Cursor c;
+        if(type.length()>1) {
+            c = plantDB.rawQuery("SELECT * FROM Plant WHERE type="+type, null);
+        }
+        else{
+            c = plantDB.rawQuery("SELECT * FROM Plant WHERE category="+category, null);
+        }
         try {
-            Cursor c = plantDB.rawQuery("SELECT * FROM Plant", null);
             int plantIdIndex = c.getColumnIndex("plantId");
             int nameIndex = c.getColumnIndex("name");
-            int descriptionIndex = c.getColumnIndex("description");
-            int lightIndex = c.getColumnIndex("light");
-            int temperatureIndex = c.getColumnIndex("temperature");
-            int fertilizeIndex = c.getColumnIndex("fertilize");
-            int botanicalNameIndex = c.getColumnIndex("botanicalName");
-            int familyIndex = c.getColumnIndex("family");
             int typeIndex = c.getColumnIndex("type");
-            int categoryIndex = c.getColumnIndex("category");
-            int profilePicIndex = c.getColumnIndex("profilePic");
-            int humidityIndex = c.getColumnIndex("humidity");
-            int sizeIndex = c.getColumnIndex("size");
-            int repottingIndex = c.getColumnIndex("repotting");
-            int bloomIndex = c.getColumnIndex("bloom");
-            int nativeAreaIndex = c.getColumnIndex("nativeArea");
             Log.e("Total results:", c.getCount() + "");
 
             if (c.getCount() == 0) {
@@ -143,20 +131,7 @@ public class PlantDB extends AppCompatActivity {
 
                 plantDict.put("plantIndex", c.getInt(plantIdIndex) + "");
                 plantDict.put("name", c.getString(nameIndex));
-                plantDict.put("description", c.getString(descriptionIndex));
-                plantDict.put("light", c.getString(lightIndex));
-                plantDict.put("temperature", c.getString(temperatureIndex));
-                plantDict.put("fertilize", c.getString(fertilizeIndex));
-                plantDict.put("botanicalName", c.getString(botanicalNameIndex));
-                plantDict.put("family", c.getString(familyIndex));
                 plantDict.put("type", c.getString(typeIndex));
-                plantDict.put("category", c.getString(categoryIndex));
-                plantDict.put("profilePic", c.getString(profilePicIndex));
-                plantDict.put("humidity", c.getString(humidityIndex));
-                plantDict.put("size", c.getString(sizeIndex));
-                plantDict.put("repotting", c.getString(repottingIndex));
-                plantDict.put("bloom", c.getString(bloomIndex));
-                plantDict.put("nativeArea", c.getString(nativeAreaIndex));
                 plantDictArr.add(plantDict);
             }
             c.close();

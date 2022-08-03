@@ -43,12 +43,8 @@ public class UserDB extends AppCompatActivity {
             values.put("password", password);
             values.put("profilePic", profilePic);
             values.put("loggedIn", loggedIn);
-            try {
-                userDB.insertOrThrow("User", null, values);
-            } catch (Exception e) {
-                e.printStackTrace();
-                return false;
-            }
+
+            userDB.insertOrThrow("User", null, values);
             return true;
         } catch (Exception e) {
             Log.e("ERROR:--", e.toString());

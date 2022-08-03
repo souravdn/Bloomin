@@ -28,7 +28,7 @@ public class TestDB {
         if (plantInserted) {
             Hashtable plantDict = plantDb.getPlant(1);
             Log.i("PLANT:--", plantDict.toString());
-            ArrayList<Hashtable<String, String>> plantDictArr = plantDb.getPlants();
+            ArrayList<Hashtable<String, String>> plantDictArr = plantDb.getPlants("shrub","");
             plantDictArr.forEach((pd) -> Log.i("PLANTS:--", pd.toString()));
         }
     }
