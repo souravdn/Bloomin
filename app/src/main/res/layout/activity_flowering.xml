@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExploreFragment">
+
+    <TextView
+        android:id="@+id/flowering_onclick_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flowering Plants"
+        android:textSize="32dp"
+        android:layout_marginTop="8dp"
+        tools:ignore="HardcodedText,SpUsage"
+        android:textColor="@color/black"
+        android:fontFamily="@font/helvetica_bold"
+        android:layout_marginStart="20dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/flowering_onclick_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/flowering_onclick_title"
+        android:layout_marginTop="32dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</RelativeLayout>

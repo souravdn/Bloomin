@@ -62,10 +62,33 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ExploreV
         @Override
         public void onClick(View view) {
             int position = this.getAdapterPosition();
-            if(position == 3){
-            Intent exploreIntent = new Intent(context, ClickOnExploreActivity.class);
-            context.startActivity(exploreIntent);
+            switch (position){
+                case 0:
+                    Intent floweringIntent = new Intent(context, FloweringActivity.class);
+                    context.startActivity(floweringIntent);
+                    break;
+                case 1:
+                    Intent foliageIntent = new Intent(context, FoliagePlantsActivity.class);
+                    context.startActivity(foliageIntent);
+                    break;
+                case 2:
+                    Intent cactiIntent = new Intent(context, CactiActivity.class);
+                    context.startActivity(cactiIntent);
+                    break;
+                case 3:
+                    Intent exploreIntent = new Intent(context, ClickOnExploreActivity.class);
+                    context.startActivity(exploreIntent);
+                    break;
+                case 4:
+                    Intent herbIntent = new Intent(context, HerbsActivity.class);
+                    context.startActivity(herbIntent);
+                    break;
+                case 5:
+                    Intent treeIntent = new Intent(context, TreesActivity.class);
+                    context.startActivity(treeIntent);
+                    break;
             }
+
         }
     }
 }
