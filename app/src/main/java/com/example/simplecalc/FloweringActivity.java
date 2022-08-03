@@ -87,6 +87,7 @@ public class FloweringActivity extends AppCompatActivity {
         plant_type.add("Perennial");
         plant_type.add("Perennial bulb");
         plant_type.add("Perennial, shrub");
+        plant_type.add("Perennial, shrub");
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false);
         explore_onclick_recyclerview.setLayoutManager(gridLayoutManager);
