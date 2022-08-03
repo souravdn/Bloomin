@@ -27,14 +27,12 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.List;
 import java.util.Locale;
-
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment=new HomeFragment();
     ReminderFragment reminderFragment=new ReminderFragment(this);
     ShopFragment shopFragment=new ShopFragment();
     ExploreFragment exploreFragment=new ExploreFragment();
-
     int counter = 0;
 
     @Override
@@ -79,6 +77,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //new TestDB(this);     //to create a sample database
+//        new TestDB(this);     //to create a sample database
     }
 }
