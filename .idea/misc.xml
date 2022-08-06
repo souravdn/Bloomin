@@ -54,7 +54,11 @@
         <entry key="app/src/main/res/drawable/button_background.xml" value="0.2265" />
         <entry key="app/src/main/res/drawable/checkbox_selector.xml" value="0.2265" />
         <entry key="app/src/main/res/drawable/reminder_palette.xml" value="0.2265" />
+        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/layout/activity_profile_page.xml" value="0.22604166666666667" />
+        <entry key="app/src/main/res/layout/activity_signin.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/activity_signout.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_reminder.xml" value="0.33" />
       </map>

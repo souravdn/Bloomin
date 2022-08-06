@@ -65,15 +65,16 @@ public class signup extends AppCompatActivity {
         String pass1 = mPass1.getText().toString();
 
         if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            if (!pass.isEmpty() ) {
+            if (!pass.isEmpty()) {
                 mAuth.createUserWithEmailAndPassword(email, pass)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 Toast.makeText(signup.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(signup.this, signin.class));
+                                startActivity(new Intent(signup.this, signout.class));
+                                UserDB userDb = new UserDB(getApplicationContext());
+                                userDb.loginUser(email, pass);
                                 finish();
-
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -81,8 +82,7 @@ public class signup extends AppCompatActivity {
                                 Toast.makeText(signup.this, "Registration Error!", Toast.LENGTH_LONG).show();
                             }
                         });
-            }
-            else if (pass.length()<5 ){
+            } else if (pass.length() < 5) {
                 Toast.makeText(signup.this, "Password should not be less then 5 word.", Toast.LENGTH_LONG).show();
 //                mPass.setText("Password should not be less then 5 word.");
             }

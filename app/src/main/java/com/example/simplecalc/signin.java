@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -33,11 +34,20 @@ public class signin extends AppCompatActivity {
         mEmail = findViewById(R.id.edit_email2);
         mPass = findViewById(R.id.edit_password2);
         signInBtn = findViewById(R.id.signin_btn);
+        mTextView = findViewById(R.id.text1);
         mAuth = FirebaseAuth.getInstance();
+
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginUser();
+            }
+        });
+
+        mTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(signin.this, signup.class));
             }
         });
     }
@@ -48,21 +58,26 @@ public class signin extends AppCompatActivity {
 
         if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             if (!pass.isEmpty()) {
-mAuth.signInWithEmailAndPassword(email,pass)
-        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                Toast.makeText(signin.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(signin.this,signout.class));
-                finish();
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(signin.this, "Login Failed, Check Username or password again!", Toast.LENGTH_SHORT).show();
-            }
-        });
+                mAuth.signInWithEmailAndPassword(email, pass)
+                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                            @Override
+                            public void onSuccess(AuthResult authResult) {
+                                Toast.makeText(signin.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(signin.this, signout.class));
+                                UserDB userDb = new UserDB(getApplicationContext());
+                                Log.i("Email",email);
+                                Log.i("Email_EditTxt",mEmail.getText().toString());
+                                Log.i("Passwd",pass);
+                                Log.i("Edit_Passwd",mPass.getText().toString());
+                                userDb.loginUser(email, pass);
+                                finish();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(signin.this, "Login Failed, Check Username or password again!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
             } else {
                 mPass.setText("Empty fild are not allowed");
             }

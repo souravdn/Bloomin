@@ -76,7 +76,5 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-//        new TestDB(this);     //to create a sample database
     }
 }

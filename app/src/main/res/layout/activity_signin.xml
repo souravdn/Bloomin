@@ -60,7 +60,17 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
+        <TextView
+            android:id="@+id/forgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/helvetica"
+            android:text="Forgot Password?"
+            android:layout_gravity="right"
+            android:layout_marginRight="32dp"
+            android:textColor="#FF0000"
+            android:textSize="16dp"/>
 
         <Button
             android:id="@+id/signin_btn"
@@ -68,9 +78,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="Sign In">
-
         </Button>
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/helvetica"
+            android:text="Not Registered? Sign Up"
+            android:textColor="#2377fc"
+            android:textSize="18dp"/>
 
+    </LinearLayout>
 </RelativeLayout>

@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -24,6 +25,7 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,22 +34,27 @@ import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class EditProfileActivity extends AppCompatActivity implements LocationListener {
 
     int storage_permission_code = 1;
     ImageView profile;
     ImageButton pencil;
-    String[] gender = {"Male", "Female", "Other"};
+    String[] genders = {"Male", "Female", "Other"};
+    String selectedGender="Male";
     AutoCompleteTextView autoCompleteTextView;
     TextInputEditText bday, user_location, edit_name, edit_email, edit_ph, edit_pass, edit_confirm;
     DatePickerDialog.OnDateSetListener onDateSetListener;
@@ -81,13 +88,22 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.gender_list, gender);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.gender_list, genders);
         autoCompleteTextView.setAdapter(adapter);
+
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+                Log.e("Selected item", item);
+                selectedGender = item;
+            }
+        });
 
         pencil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(ContextCompat.checkSelfPermission(EditProfileActivity.this,
+                if (ContextCompat.checkSelfPermission(EditProfileActivity.this,
                         Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     ImagePicker.Companion.with(EditProfileActivity.this)
                             .crop()
@@ -95,8 +111,7 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
                             .compress(1024)
                             .maxResultSize(1080, 1080)
                             .start();
-                }
-                else {
+                } else {
                     requestStoragePermission();
                 }
             }
@@ -106,13 +121,12 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
             @Override
             public void onClick(View view) {
                 Toast.makeText(EditProfileActivity.this, "Wait for Few Seconds", Toast.LENGTH_SHORT).show();
-                if(ContextCompat.checkSelfPermission(EditProfileActivity.this,
-                        Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+                if (ContextCompat.checkSelfPermission(EditProfileActivity.this,
+                        Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(EditProfileActivity.this, new String[]{
                             Manifest.permission.ACCESS_FINE_LOCATION
                     }, 100);
-                }
-                else{
+                } else {
                     getLocation();
                 }
             }
@@ -144,35 +158,87 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
         save_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(TextUtils.isEmpty(Objects.requireNonNull(edit_name.getText()).toString())){
+                if (TextUtils.isEmpty(Objects.requireNonNull(edit_name.getText()).toString())) {
                     edit_name.setError("Name is required.");
                     edit_name.requestFocus();
                     return;
                 }
-                if(TextUtils.isEmpty(Objects.requireNonNull(edit_email.getText()).toString())){
+                if (TextUtils.isEmpty(Objects.requireNonNull(edit_email.getText()).toString())) {
                     edit_email.setError("Email is required.");
                     edit_email.requestFocus();
                     return;
-                } else if(!Patterns.EMAIL_ADDRESS.matcher(edit_email.getText().toString()).matches()){
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(edit_email.getText().toString()).matches()) {
                     edit_email.setError("Enter Valid Email Address.");
                     edit_email.requestFocus();
                     return;
                 }
-                if(TextUtils.isEmpty(Objects.requireNonNull(edit_ph.getText()).toString())){
+                if (TextUtils.isEmpty(Objects.requireNonNull(edit_ph.getText()).toString())) {
                     edit_ph.setError("Phone Number is required.");
                     edit_ph.requestFocus();
                     return;
-                } else if(!android.util.Patterns.PHONE.matcher(edit_ph.getText().toString()).matches()){
+                } else if (!android.util.Patterns.PHONE.matcher(edit_ph.getText().toString()).matches()) {
                     edit_ph.setError("Enter Valid Phone Number.");
                     edit_ph.requestFocus();
                     return;
                 }
-                if(!Objects.requireNonNull(edit_pass.getText()).toString().equals(Objects.requireNonNull(edit_confirm.getText()).toString())){
+                if (!Objects.requireNonNull(edit_pass.getText()).toString().equals(Objects.requireNonNull(edit_confirm.getText()).toString())) {
                     Toast.makeText(EditProfileActivity.this, "Passwords Doesn't Match", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
+                if( edit_pass.getText().toString()=="" || edit_confirm.getText().toString() == ""){
+                    Toast.makeText(EditProfileActivity.this, "Passwords cannot be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (updateUserProfile()) {
+                    Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(EditProfileActivity.this, ProfilePage.class));
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Profile Not Updated. Try Again", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
+        UserDB userDb = new UserDB(getApplicationContext());
+        Hashtable<String, String> user = userDb.getUser();
+
+        edit_name.setText(user.get("name"));
+        bday.setText(user.get("birthday"));
+        edit_email.setText(user.get("email"));
+        edit_ph.setText(user.get("phoneNo"));
+        user_location.setText(user.get("address"));
+        autoCompleteTextView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                autoCompleteTextView.setText(user.get("gender"));
+                autoCompleteTextView.showDropDown();
+            }
+        }, 10);
+        Integer img = getResources().getIdentifier(user.get("profilePic"), "drawable", getPackageName());
+//        profileImg.setImageResource(img);
+    }
+
+    @SuppressLint("ResourceType")
+    private boolean updateUserProfile() {
+        String name = edit_name.getText().toString();
+        String email = edit_email.getText().toString();
+        String phNo = edit_ph.getText().toString();
+        String dob = bday.getText().toString();
+        String address = user_location.getText().toString();
+        String gender = selectedGender;
+        String password = edit_pass.getText().toString();
+        CircleImageView profileImg = findViewById(R.id.profile_image);
+        Drawable.ConstantState profileImgName = profileImg.getDrawable().getConstantState();
+        Log.e("profileImgName:--", profileImgName.toString());
+
+        UserDB userDb = new UserDB(getApplicationContext());
+        boolean updated = userDb.updateUser(name, email, phNo, gender, dob, address, password, "profileImg.jpg");
+        if (updated) {
+            Hashtable<String, String> userDict = userDb.getUser();
+            Log.i("(DB) userData :--", userDict.toString());
+            return true;
+        } else
+            return false;
     }
 
     @Override
@@ -183,7 +249,7 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
     }
 
     private void requestStoragePermission() {
-        if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)){
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
             new AlertDialog.Builder(this)
                     .setTitle("Permission Needed")
                     .setMessage("Permission is Needed to set Profile Picture.")
@@ -191,9 +257,8 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             ActivityCompat.requestPermissions(EditProfileActivity.this,
-                                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
+                                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                                     storage_permission_code);
-
                         }
                     })
                     .setNegativeButton("NO", new DialogInterface.OnClickListener() {
@@ -203,9 +268,8 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
                         }
                     })
                     .create().show();
-        }
-        else{
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, storage_permission_code);
+        } else {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, storage_permission_code);
         }
     }
 
@@ -220,8 +284,7 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
                         .compress(1024)
                         .maxResultSize(1080, 1080)
                         .start();
-            }
-            else{
+            } else {
                 Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
@@ -232,21 +295,19 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
         try {
             locationManager = (LocationManager) getApplicationContext().getSystemService(LOCATION_SERVICE);
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1, 1, EditProfileActivity.this);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        try{
+        try {
             Geocoder geocoder = new Geocoder(EditProfileActivity.this, Locale.getDefault());
             List<Address> addressList = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
             String address = addressList.get(0).getAddressLine(0);
             user_location.setText(address);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
