@@ -53,8 +53,8 @@ public class signin extends AppCompatActivity {
     }
 
     private void loginUser() {
-        String email = mEmail.getText().toString();
-        String pass = mPass.getText().toString();
+        final String email = mEmail.getText().toString();
+        final String pass = mPass.getText().toString();
 
         if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             if (!pass.isEmpty()) {

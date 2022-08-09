@@ -53,7 +53,7 @@ public class indoor_adapter extends RecyclerView.Adapter<indoor_adapter.Viewhold
         public ImageView iv;
         public TextView tv1, tv2;
 
-        public  Viewholder(@NonNull View itemView,Recyclerview_interface recyclerview_interface) {
+        public  Viewholder(@NonNull View itemView, final Recyclerview_interface recyclerview_interface) {
             super(itemView);
             iv = itemView.findViewById(R.id.image_indoor1);
             tv1 = itemView.findViewById(R.id.indoor_tv1);

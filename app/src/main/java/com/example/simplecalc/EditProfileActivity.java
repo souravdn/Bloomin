@@ -83,9 +83,9 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
         save_details = findViewById(R.id.save_details);
 
         final Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        final int year = calendar.get(Calendar.YEAR);
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.gender_list, genders);
@@ -200,7 +200,7 @@ public class EditProfileActivity extends AppCompatActivity implements LocationLi
         });
 
         UserDB userDb = new UserDB(getApplicationContext());
-        Hashtable<String, String> user = userDb.getUser();
+        final Hashtable<String, String> user = userDb.getUser();
 
         edit_name.setText(user.get("name"));
         bday.setText(user.get("birthday"));

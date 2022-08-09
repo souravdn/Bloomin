@@ -60,8 +60,8 @@ public class signup extends AppCompatActivity {
 
     //---------------------------------------------------------------------------------------------------
     private void createUser() {
-        String email = mEmail.getText().toString();
-        String pass = mPass.getText().toString();
+        final String email = mEmail.getText().toString();
+        final String pass = mPass.getText().toString();
         String pass1 = mPass1.getText().toString();
 
         if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
