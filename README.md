@@ -4,11 +4,13 @@
 Bloomin’ helps users to find accurate and reliable information efficiently to grow and track their plant's health with minimum efforts.<strong/>
 <br><br>
 
-> ## Views
-![Bloomin](https://user-images.githubusercontent.com/73666943/186475221-a223bce1-5fb7-423d-9c0c-a6884c729082.png)
-<br><br>
-
 > ### Packages & dependencies
 * [<em>Bloomin backend<em>](https://github.com/souravdn/bloomin-api)
 > ### API Link
 * [<em>Bloomin plants API data>](https://bloomin-api.herokuapp.com/)
+
+> ## Views
+![Bloomin](https://user-images.githubusercontent.com/73666943/186475221-a223bce1-5fb7-423d-9c0c-a6884c729082.png)
+<br><br>
+
+
