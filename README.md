@@ -9,4 +9,6 @@ Bloomin’ helps users to find accurate and reliable information efficiently to 
 <br><br>
 
 > ### Packages & dependencies
-* [<em>Bloomin backend<em>](https://github.com/Bikash-nath/Bloomin-backend)
+* [<em>Bloomin backend<em>](https://github.com/souravdn/bloomin-api)
+> ### API Link
+* [<em>Bloomin plants API data>](https://bloomin-api.herokuapp.com/)
