@@ -8,5 +8,5 @@ Bloomin’ helps users to find accurate and reliable information efficiently to 
 ![Bloomin](https://user-images.githubusercontent.com/73666943/186475221-a223bce1-5fb7-423d-9c0c-a6884c729082.png)
 <br><br>
 
-> ### Packages
-[<em>Bloomin backend<em>](https://github.com/Bikash-nath/Bloomin-backend/tree/master)
+> ### Packages & dependencies
+* [<em>Bloomin backend<em>](https://github.com/Bikash-nath/Bloomin-backend/tree/master)
